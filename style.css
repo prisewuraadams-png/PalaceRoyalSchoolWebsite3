@@ -1520,8 +1520,8 @@ gallery-grid{
   border-radius:16px;
   padding:1px;
   background:linear-gradient(135deg, transparent, #ffc107, transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
+  webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  webkit-mask-composite: xor;
   opacity:0;
   transition:0.4s;
 }
@@ -2077,4 +2077,62 @@ gallery-grid{
 .whatsapp-btn img {
   width: 28px !important;
   height: 28px !important;
+}
+
+/* WhatsApp icon animation */
+.whatsapp-btn {
+  animation: whatsappFloat 3s ease-in-out infinite,
+             whatsappPulse 2s infinite;
+}
+
+/* Floating movement */
+@keyframes whatsappFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Pulse glow */
+@keyframes whatsappPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* FINAL WHATSAPP ANIMATION FIX */
+.whatsapp-btn {
+  animation: whatsappBounce 2.5s ease-in-out infinite !important;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1) !important;
+}
+
+@keyframes whatsappBounce {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
+
+  50% {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 30px rgba(37, 211, 102, 0.35);
+  }
+
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
 }
