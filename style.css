@@ -335,9 +335,10 @@ footer{
 /* ================= WHATSAPP FLOAT ================= */
 .whatsapp-btn {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1000;
+  right: 20px;
+  bottom: 130px; /* pushes it above footer social icons */
+  z-index: 999;
+}
 
   width: 60px;
   height: 60px;
@@ -529,6 +530,14 @@ footer{
     font-size: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: 150px;
+    right: 18px;
+  }
+}
+
 
 /* MOBILE */
 @media(max-width:768px) {
@@ -2048,4 +2057,24 @@ gallery-grid{
     height: 40px;
     font-size: 16px;
   }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: 150px;
+    right: 18px;
+  }
+}/* FINAL WHATSAPP POSITION FIX */
+.whatsapp-btn {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 165px !important;
+  width: 45px !important;
+  height: 45px !important;
+  z-index: 9999 !important;
+}
+
+.whatsapp-btn img {
+  width: 28px !important;
+  height: 28px !important;
 }
